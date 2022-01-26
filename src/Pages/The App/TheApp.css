@@ -1,0 +1,17 @@
+
+@media (max-width: 988px) {
+    .responsBanner{
+
+        text-align: center;
+        padding-bottom: 40px;
+    }
+    
+  }
+  
+  @media (max-width: 464px) {
+    .resBannerText{
+
+        font-size: 40px !important;
+    }
+    
+  }

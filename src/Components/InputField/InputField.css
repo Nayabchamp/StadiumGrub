@@ -1,0 +1,12 @@
+.form-control {
+    border-left: 4px solid #ff761b !important;
+    border: 1px solid #ebebeb;
+  }
+  .form-select {
+    border-left: 4px solid #ff761b !important;
+    border: 1px solid #ebebeb;
+  }
+  .placeholder {
+    color: #ebebeb !important;
+  }
+  
