@@ -15,6 +15,7 @@ import Banner from "../../Components/Banner/Banner";
 import Timealine from "../../Components/TimeLine/Timeline";
 import Carousel from "../../Components/Carousel/Carousel";
 import Form from "../../Components/Form/Form";
+import laptopImg from "./Img/image 5.png";
 const mobiles = [
   {
     title: "Select Your Event",
@@ -234,7 +235,7 @@ export default function TheApp() {
               <Button text="Venue Solution" primaryBtn href="" />
             </Col>
             <Col lg={6} className="text-end p-0 m-0">
-              <img style={{ maxWidth: "100%" }} src={bgImg} />
+              <img style={{ maxWidth: "100%" }} src={laptopImg} />
             </Col>
           </Row>
         </Container>
@@ -330,15 +331,14 @@ stadium at the fans’ fingertips"
         }}>
         <Container className="">
           <Row className="align-items-center">
-            <Col xl={6} lg={6} md={12} sm={12}>
+            <Col xl={5} lg={5} md={12} sm={12}>
               <div className="responsBanner">
                 <Text
                   className="resBannerText"
                   white
                   fontSize="45px"
                   black
-                  text="CONTACTLESS CONCESSIONS"
-                  nextText="NEVER MISS A MOMENT"
+                  text="WE WOULD LOVE TO HERE FROM YOU"
                 />
                 <div className=" pt-4">
                   <img style={{ maxWidth: "35%" }} src={iosBtn} />
@@ -351,7 +351,7 @@ stadium at the fans’ fingertips"
                 </div> */}
               </div>
             </Col>
-            <Col xl={6} lg={6} md={12} sm={12}>
+            <Col xl={7} lg={7} md={12} sm={12}>
               <div className="text-center">
                 <Form />
               </div>

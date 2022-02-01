@@ -56,7 +56,7 @@ export default function Timealine({ img }: timeline) {
   return (
     <>
       <div className="pt-5 pb-5 text-center">
-        <Text medium fontSize="25px" text="How its Work" />
+        <Text medium fontSize="35px" text="How its Work" />
       </div>
       {/* <section
         style={{

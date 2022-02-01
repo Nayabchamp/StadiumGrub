@@ -109,10 +109,6 @@ export default function Form({ primary }: Form) {
               </BootstrapForm>
             ) : (
               <BootstrapForm>
-                <div className="pb-4 ">
-                  <Text bold fontSize="35px" text={<>contact us</>} />
-                </div>
-
                 <Row className="g-2 pt-1 pb-1">
                   {contactForm.map(
                     ({ type, placeholder, col, formSelect, as }) => {
