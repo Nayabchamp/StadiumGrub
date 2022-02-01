@@ -2,17 +2,19 @@ import react from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Button from "../../Components/Button/Button";
 import Text from "../../Components/Text/Text";
-import bgImg from "./Img/bgImg.jpg";
-import mobGraphic from "./Img/mobGraphic.png";
+import bgImg from "./Img/bgImg.png";
+import bannerImg from "./Img/image 2.png";
 import iosBtn from "./Img/App-iOS.png";
-import venueImg from "./Img/bb.png";
+import mob from "./Img/mob.png";
 import event from "./Img/event.png";
-import touchlessbg from "./Img/SEATZ_touchless.png";
-import scan from "./Img/SEATZ_CONTACT scan.png";
-import tablet from "./Img/SEATZ_TABLET.png";
-import runners from "./Img/SEATZ_CONTACT.png";
+import scan from "./Img/1.png";
+import tablet from "./Img/2.png";
+import runners from "./Img/3.png";
 import "./TheApp.css";
 import Banner from "../../Components/Banner/Banner";
+import Timealine from "../../Components/TimeLine/Timeline";
+import Carousel from "../../Components/Carousel/Carousel";
+import Form from "../../Components/Form/Form";
 const mobiles = [
   {
     title: "Select Your Event",
@@ -78,27 +80,29 @@ export default function TheApp() {
       {/* main banner start */}
       <section
         style={{
-          paddingTop: "200px",
+          paddingTop: "140px",
           paddingBottom: "100px",
-          backgroundColor: "rgb(255, 94, 0)",
+          backgroundImage: `url(${bgImg}) `,
+          backgroundPosition: "bottom",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
         }}>
         <Container>
           <Row className="align-items-center">
-            <Col xl={6} lg={6} md={12} sm={12}>
+            <Col xl={7} lg={7} md={12} sm={12}>
               <div className="responsBanner">
                 <Text
                   className="resBannerText"
                   white
-                  fontSize="60px"
+                  fontSize="45px"
                   black
-                  text="SKIP THE LINE."
-                  nextText="NOT THE GAME."
+                  text="CONTACTLESS CONCESSIONS"
+                  nextText="NEVER MISS A MOMENT"
                 />
                 <div className=" pt-4">
-                  <img
-                    style={{ maxWidth: "35%", marginRight: "25px" }}
-                    src={iosBtn}
-                  />
+                  <img style={{ maxWidth: "35%" }} src={iosBtn} />
+                </div>
+                <div className=" pt-4">
                   <img style={{ maxWidth: "35%" }} src={iosBtn} />
                 </div>
                 {/* <div className="pt-5">
@@ -106,9 +110,16 @@ export default function TheApp() {
                 </div> */}
               </div>
             </Col>
-            <Col xl={6} lg={6} md={12} sm={12}>
+            <Col xl={5} lg={5} md={12} sm={12}>
               <div className="text-center">
-                <img style={{ maxWidth: "100%" }} src={mobGraphic} />
+                <img style={{ maxWidth: "80%" }} src={bannerImg} />
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={12} className="text-center pt-5">
+              <div>
+                <Button primaryBtn text="Venue Solution" />
               </div>
             </Col>
           </Row>
@@ -116,46 +127,123 @@ export default function TheApp() {
       </section>
       {/* main banner end */}
 
-      {/* venue solution start */}
-      <Container className="pt-5 pb-5">
-        <Row className="align-items-center pt-5 pb-5">
-          <Col lg={6}>
-            <div>
-              <Text
-                medium
-                fontSize="25px"
-                text={
-                  <>
-                    MULTI-PLATFORM SOFTWARE CONNECTS FANS TO GAME DAYLIKE NO
-                    OTHER
-                  </>
-                }
-              />
-            </div>
-            <div className="pt-2 pb-2">
-              <Text
-                fontSize="18px"
-                text={
-                  <>
-                    mobile ordering/delivery | express pick-up | self-serve
-                    kiosks | event management | and more!
-                  </>
-                }
-              />
-            </div>
+      {/* TOUCHLESS TRANSACTION TECHNOLOGY start */}
+      <section className="bglinearGradiant">
+        <Container className="pt-5  pb-5">
+          <Row className="pt-5 pb-5 ">
+            {touchless.map(({ text, img }) => {
+              return (
+                <>
+                  <Col lg={4}>
+                    <div className="text-center " style={{ padding: "20px" }}>
+                      {img}
+                      <div className="pt-3">
+                        <Text medium fontSize="16px" text={text} />
+                      </div>
+                    </div>
+                  </Col>
+                </>
+              );
+            })}
+          </Row>
+        </Container>
+      </section>
 
-            <Button text="Venue Solution" primaryBtn href="" />
-          </Col>
-          <Col lg={6}>
-            <img style={{ maxWidth: "100%" }} src={venueImg} />
-          </Col>
-        </Row>
-      </Container>
+      {/* TOUCHLESS TRANSACTION TECHNOLOGY end */}
+
+      {/* timeline start */}
+
+      <Timealine />
+      {/* timelineEnd */}
+
+      {/* venue solution start */}
+      <section style={{ backgroundColor: "yellow" }}>
+        <Container fluid className="pb-5">
+          <Row className="align-items-center">
+            <Col lg={6} className="pt-3" style={{ paddingLeft: "40px" }}>
+              <div>
+                <Text
+                  medium
+                  fontSize="25px"
+                  text={
+                    <>
+                      MULTI-PLATFORM SOFTWARE CONNECTS FANS TO GAME DAYLIKE NO
+                      OTHER
+                    </>
+                  }
+                />
+              </div>
+              <div className="pt-2 pb-2">
+                <Text
+                  fontSize="18px"
+                  text={
+                    <>
+                      mobile ordering/delivery | express pick-up | self-serve
+                      kiosks | event management | and more!
+                    </>
+                  }
+                />
+              </div>
+
+              <Button text="Venue Solution" primaryBtn href="" />
+            </Col>
+            <Col lg={6} className="text-end p-0 m-0">
+              <img style={{ maxWidth: "100%" }} src={mob} />
+            </Col>
+          </Row>
+        </Container>
+      </section>
 
       {/* venue solution end */}
 
+      {/* Carousel start */}
+      <Carousel />
+
+      {/* Carousel end */}
+
+      {/* ///// start */}
+
+      <section>
+        <Container className="mt-5 pt-5 mb-5 pb-5">
+          <Row className="align-items-center">
+            <Col lg={6} className="pt-3" style={{ paddingLeft: "40px" }}>
+              <div>
+                <Text
+                  medium
+                  fontSize="25px"
+                  text={
+                    <>
+                      MULTI-PLATFORM SOFTWARE CONNECTS FANS TO GAME DAYLIKE NO
+                      OTHER
+                    </>
+                  }
+                />
+              </div>
+              <div className="pt-2 pb-2">
+                <Text
+                  fontSize="18px"
+                  text={
+                    <>
+                      mobile ordering/delivery | express pick-up | self-serve
+                      kiosks | event management | and more!
+                    </>
+                  }
+                />
+              </div>
+
+              <Button text="Venue Solution" primaryBtn href="" />
+            </Col>
+            <Col lg={6} className="text-end p-0 m-0">
+              <img style={{ maxWidth: "100%" }} src={bgImg} />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* ///// end */}
+
       {/* mobile cards start */}
-      <Container className="pt-5  pb-5">
+      {/* <Container className="pt-5  pb-5">
         <div className="text-center">
           <Text medium fontSize="35px" text="HOW DOES IT WORK?" orange />
           <Text
@@ -189,68 +277,21 @@ stadium at the fans’ fingertips"
             );
           })}
         </Row>
-      </Container>
+      </Container> */}
       {/* mobile cards end */}
-
-      {/* TOUCHLESS TRANSACTION TECHNOLOGY start */}
-      <section
-        style={{
-          paddingTop: "100px",
-          paddingBottom: "50px",
-          backgroundImage: `url(${touchlessbg}) `,
-          backgroundPosition: "bottom",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}>
-        <Container className="pt-5  pb-5">
-          <div className="text-center">
-            <Text
-              medium
-              fontSize="35px"
-              text="TOUCHLESS TRANSACTION TECHNOLOGY"
-              white
-            />
-            <Text
-              medium
-              white
-              fontSize="16px"
-              text="Use your phone to place your “contact-free” express pickup 
-              or delivery order for a safer ordering experience OR…"
-            />
-          </div>
-          <Row className="pt-5 pb-5 ">
-            {touchless.map(({ text, img }) => {
-              return (
-                <>
-                  <Col lg={4}>
-                    <div className="text-center " style={{ padding: "20px" }}>
-                      {img}
-                      <div className="pt-3">
-                        <Text medium fontSize="16px" text={text} white />
-                      </div>
-                    </div>
-                  </Col>
-                </>
-              );
-            })}
-          </Row>
-        </Container>
-      </section>
-
-      {/* TOUCHLESS TRANSACTION TECHNOLOGY end */}
 
       {/* Still Have Questions start */}
 
-      <Banner
+      {/* <Banner
         bottomBanner
         title="Still Have Questions?
 "
         btnText="Contact Us"
-      />
+      /> */}
       {/* Still Have Questions end */}
 
       {/* seatzCard start */}
-
+      {/* 
       <Container>
         <Row className="justify-content-center">
           {seatzCard.map(({ title, text, btnText }) => {
@@ -274,8 +315,50 @@ stadium at the fans’ fingertips"
             );
           })}
         </Row>
-      </Container>
+      </Container> */}
       {/* seatzCard end */}
+
+      <section
+        className="pt-5 mt-5"
+        style={{
+          paddingTop: "140px",
+          paddingBottom: "100px",
+          backgroundImage: `url(${bgImg}) `,
+          backgroundPosition: "bottom",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}>
+        <Container className="">
+          <Row className="align-items-center">
+            <Col xl={6} lg={6} md={12} sm={12}>
+              <div className="responsBanner">
+                <Text
+                  className="resBannerText"
+                  white
+                  fontSize="45px"
+                  black
+                  text="CONTACTLESS CONCESSIONS"
+                  nextText="NEVER MISS A MOMENT"
+                />
+                <div className=" pt-4">
+                  <img style={{ maxWidth: "35%" }} src={iosBtn} />
+                </div>
+                <div className=" pt-4">
+                  <img style={{ maxWidth: "35%" }} src={iosBtn} />
+                </div>
+                {/* <div className="pt-5">
+                  <Button text="Request a Demo" />
+                </div> */}
+              </div>
+            </Col>
+            <Col xl={6} lg={6} md={12} sm={12}>
+              <div className="text-center">
+                <Form />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </>
   );
 }

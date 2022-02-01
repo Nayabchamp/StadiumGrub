@@ -48,7 +48,7 @@ const footercontact = [
 export default function Footer() {
   return (
     <>
-      <section className="mt-5" style={{ backgroundColor: "#4E4B4F" }}>
+      <section className="" style={{ backgroundColor: "#4E4B4F" }}>
         <Container className="pt-5">
           <Row>
             <Col lg={4} md={4} sm={4} xs={12} className="pt-5">
