@@ -16,6 +16,7 @@ import Timealine from "../../Components/TimeLine/Timeline";
 import Carousel from "../../Components/Carousel/Carousel";
 import Form from "../../Components/Form/Form";
 import laptopImg from "./Img/image 5.png";
+import MediaQuery from "react-responsive";
 const mobiles = [
   {
     title: "Select Your Event",
@@ -160,8 +161,8 @@ export default function TheApp() {
       {/* venue solution start */}
       <section style={{ backgroundColor: "yellow" }}>
         <Container fluid className="pb-5">
-          <Row className="align-items-center">
-            <Col lg={6} className="pt-3" style={{ paddingLeft: "40px" }}>
+          <Row className="align-items-center ">
+            <Col lg={6} md={6} className="pt-3" style={{ paddingLeft: "40px" }}>
               <div>
                 <Text
                   medium
@@ -188,9 +189,11 @@ export default function TheApp() {
 
               <Button text="Venue Solution" primaryBtn href="" />
             </Col>
-            <Col lg={6} className="text-end p-0 m-0">
-              <img style={{ maxWidth: "100%" }} src={mob} />
-            </Col>
+            <MediaQuery minWidth={766}>
+              <Col lg={6} md={6} className="text-end p-0 m-0">
+                <img style={{ maxWidth: "100%" }} src={mob} />
+              </Col>
+            </MediaQuery>
           </Row>
         </Container>
       </section>
@@ -207,7 +210,7 @@ export default function TheApp() {
       <section>
         <Container className="mt-5 pt-5 mb-5 pb-5">
           <Row className="align-items-center">
-            <Col lg={6} className="pt-3" style={{ paddingLeft: "40px" }}>
+            <Col lg={6} md={6} className="pt-3" style={{ paddingLeft: "40px" }}>
               <div>
                 <Text
                   medium
@@ -231,10 +234,11 @@ export default function TheApp() {
                   }
                 />
               </div>
-
-              <Button text="Venue Solution" primaryBtn href="" />
+              <div className="pb-4">
+                <Button text="Venue Solution" primaryBtn href="" />
+              </div>
             </Col>
-            <Col lg={6} className="text-end p-0 m-0">
+            <Col lg={6} md={6} className="text-end p-0 m-0">
               <img style={{ maxWidth: "100%" }} src={laptopImg} />
             </Col>
           </Row>

@@ -59,17 +59,7 @@ export default function Timealine({ img }: timeline) {
       <div className="pt-5 pb-5 text-center">
         <Text medium fontSize="35px" text="How its Work" />
       </div>
-      {/* <section
-        style={{
-          backgroundColor: "green",
-          width: "2px",
-          height: "840px",
-          position: "absolute",
-          left: "0",
-          right: "0",
-          margin: "auto",
-          zIndex: "-1",
-        }}></section> */}
+
       <Container>
         {timeline.map(
           ({ text, title, alignitems, height, circleText, img }) => {
@@ -77,13 +67,37 @@ export default function Timealine({ img }: timeline) {
               <>
                 <Row className={alignitems}>
                   <Col lg={4} md={5}>
-                    <div>
-                      <Text orange medium fontSize="25px" text={title} />
-                    </div>
-                    <hr style={{ color: "#ff761b", width: "50%" }} />
-                    <div className="pt-2 pb-2">
-                      <Text fontSize="18px" text={text} />
-                    </div>
+                    <MediaQuery maxWidth={766}>
+                      <div className="text-center">
+                        <div>
+                          <Text orange medium fontSize="25px" text={title} />
+                        </div>
+                        <div className="p-2">
+                          <hr
+                            style={{
+                              color: "#ff761b",
+                              width: "50%",
+                              margin: "auto",
+                            }}
+                          />
+                        </div>
+
+                        <div className="pt-2 pb-2">
+                          <Text fontSize="18px" text={text} />
+                        </div>
+                      </div>
+                    </MediaQuery>
+                    <MediaQuery minWidth={767}>
+                      <div>
+                        <div>
+                          <Text orange medium fontSize="25px" text={title} />
+                        </div>
+                        <hr style={{ color: "#ff761b", width: "50%" }} />
+                        <div className="pt-2 pb-2">
+                          <Text fontSize="18px" text={text} />
+                        </div>
+                      </div>
+                    </MediaQuery>
                   </Col>
                   <Col lg={4} md={2} className="text-center">
                     <MediaQuery minWidth={767}>
@@ -115,53 +129,18 @@ export default function Timealine({ img }: timeline) {
                     </MediaQuery>
                   </Col>
                   <Col lg={4} md={5}>
-                    <div>
-                      <img src={img} style={{ maxWidth: "130%" }} />
-                    </div>
+                    <MediaQuery maxWidth={766}>
+                      <div className="text-center">
+                        <img src={img} style={{ maxWidth: "130%" }} />
+                      </div>
+                    </MediaQuery>
+                    <MediaQuery minWidth={767}>
+                      <div>
+                        <img src={img} style={{ maxWidth: "130%" }} />
+                      </div>
+                    </MediaQuery>
                   </Col>
                 </Row>
-
-                {/* <Row>
-                  <Col lg={3}>
-                    <Button
-                      style={{
-                        position: "absolute",
-                        height: "70px",
-                        width: "70px",
-                        backgroundColor: "white",
-                        borderRadius: "50%",
-                        color: "#ff761b",
-                        borderColor: "#ff761b",
-                        border: "2px solid",
-                        left: "0",
-                        right: "0",
-                        margin: "",
-                      }}>
-                      {circleText}
-                    </Button>
-                    <div
-                      className=" "
-                      style={{
-                        border: "1px solid #ff761b ",
-                        width: "2px",
-                        height,
-                        position: "absolute",
-                        left: "0",
-                        right: "0",
-                        margin: "",
-                        zIndex: "-1",
-                      }}></div>
-                  </Col>
-                  <Col lg={9}>
-                    <div>
-                      <Text orange medium fontSize="25px" text={title} />
-                    </div>
-                    <hr style={{ color: "#ff761b", width: "50%" }} />
-                    <div className="pt-2 pb-2">
-                      <Text fontSize="18px" text={text} />
-                    </div>
-                  </Col>
-                </Row> */}
               </>
             );
           }
