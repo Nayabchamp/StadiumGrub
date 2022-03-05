@@ -8,6 +8,7 @@ import Vectarytexture from "./Img/Vectary-texture.png";
 import Vectarytexture1 from "./Img/Vectary-texture-1.png";
 import Vectarytexture2 from "./Img/Vectary-texture-2.png";
 import Text from "../Text/Text";
+import MediaQuery from "react-responsive";
 interface timeline {
   img?: any;
 }
@@ -75,7 +76,7 @@ export default function Timealine({ img }: timeline) {
             return (
               <>
                 <Row className={alignitems}>
-                  <Col lg={4}>
+                  <Col lg={4} md={5}>
                     <div>
                       <Text orange medium fontSize="25px" text={title} />
                     </div>
@@ -84,9 +85,47 @@ export default function Timealine({ img }: timeline) {
                       <Text fontSize="18px" text={text} />
                     </div>
                   </Col>
-                  <Col lg={4} className="text-center">
+                  <Col lg={4} md={2} className="text-center">
+                    <MediaQuery minWidth={767}>
+                      <Button
+                        style={{
+                          height: "70px",
+                          width: "70px",
+                          backgroundColor: "white",
+                          borderRadius: "50%",
+                          color: "#ff761b",
+                          borderColor: "#ff761b",
+                          border: "2px solid",
+                        }}>
+                        {circleText}
+                      </Button>
+
+                      <div
+                        className="justify-content-center d-flex"
+                        style={{
+                          border: "1px solid #ff761b ",
+                          width: "2px",
+                          height,
+                          position: "absolute",
+                          left: "0",
+                          right: "0",
+                          margin: "auto",
+                          zIndex: "-1",
+                        }}></div>
+                    </MediaQuery>
+                  </Col>
+                  <Col lg={4} md={5}>
+                    <div>
+                      <img src={img} style={{ maxWidth: "130%" }} />
+                    </div>
+                  </Col>
+                </Row>
+
+                {/* <Row>
+                  <Col lg={3}>
                     <Button
                       style={{
+                        position: "absolute",
                         height: "70px",
                         width: "70px",
                         backgroundColor: "white",
@@ -94,11 +133,14 @@ export default function Timealine({ img }: timeline) {
                         color: "#ff761b",
                         borderColor: "#ff761b",
                         border: "2px solid",
+                        left: "0",
+                        right: "0",
+                        margin: "",
                       }}>
                       {circleText}
                     </Button>
                     <div
-                      className="justify-content-center d-flex"
+                      className=" "
                       style={{
                         border: "1px solid #ff761b ",
                         width: "2px",
@@ -106,16 +148,20 @@ export default function Timealine({ img }: timeline) {
                         position: "absolute",
                         left: "0",
                         right: "0",
-                        margin: "auto",
+                        margin: "",
                         zIndex: "-1",
                       }}></div>
                   </Col>
-                  <Col lg={4}>
+                  <Col lg={9}>
                     <div>
-                      <img src={img} style={{ maxWidth: "130%" }} />
+                      <Text orange medium fontSize="25px" text={title} />
+                    </div>
+                    <hr style={{ color: "#ff761b", width: "50%" }} />
+                    <div className="pt-2 pb-2">
+                      <Text fontSize="18px" text={text} />
                     </div>
                   </Col>
-                </Row>
+                </Row> */}
               </>
             );
           }

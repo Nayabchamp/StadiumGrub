@@ -1,19 +1,9 @@
-import react from "react";
-import { brotliDecompress } from "zlib";
 interface Itext {
   text?: any;
   bold?: boolean;
   medium?: boolean;
   black?: boolean;
-  fontSize?:
-    | "60px"
-    | "35px"
-    | "45px"
-    | "25px"
-    | "20px"
-    | "18px"
-    | "16px"
-    | "15px";
+  fontSize?: string;
   //   color?: "white" | "black" | "#ff761b";
   white?: boolean;
   orange?: boolean;
