@@ -218,7 +218,6 @@ export default function TheApp() {
                   text={
                     <>
                       MULTI-PLATFORM SOFTWARE CONNECTS FANS TO GAME DAYLIKE NO
-                      OTHER
                     </>
                   }
                 />
